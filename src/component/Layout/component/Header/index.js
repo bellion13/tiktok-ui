@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCircleQuestion, faCircleXmark, faEarthAsia, faEllipsisVertical, faKeyboard, faMagnifyingGlass, faSpinner } from '@fortawesome/free-solid-svg-icons';
+import { faCircleQuestion, faCircleXmark, faEarthAsia, faEllipsisVertical, faKeyboard, faMagnifyingGlass, faSignIn, faSpinner } from '@fortawesome/free-solid-svg-icons';
 import styles from './Header.module.scss';
 import Tippy from '@tippyjs/react/headless';
 import imgs from '~/assets/imgs';
@@ -67,12 +67,12 @@ function Header() {
                 </Tippy>
                 <div className={cx('actions')}>
                     <Button text>Upload</Button>
-                    <Button outline>Log In</Button>
+                    <Button outline rightIcon={<FontAwesomeIcon icon={faSignIn} />} >Log In</Button>
                     <Button primary disabled>
                         Register
                     </Button>
                     <Menu
-                    items = {[MENU_ITEMS]}
+                    items = {MENU_ITEMS}
                     >
                         <button className={cx('more-btn')}>
                             <FontAwesomeIcon icon={faEllipsisVertical} />
