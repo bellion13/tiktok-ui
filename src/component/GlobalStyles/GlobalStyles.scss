@@ -1,16 +1,12 @@
-@import 'normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap');
+@import "normalize.css";
 :root {
-    --primary:#fe2c55;
+    --primary: #fe2c55;
     --black: #000;
     --text-color: #333;
-    --white:#fff;
+    --white: #fff;
     //defalt layout
     --default-layout-header-hight: 60px;
     --default-layout-width: 1150px;
-
-
-    
 }
 * {
     margin: 0;
@@ -20,16 +16,27 @@
 html {
     font-size: 62.5%;
 }
-body{
-    font-family: 'IBM Plex Sans', san-serif;
+body {
+    font-family: "IBM Plex Sans", san-serif;
     font-size: 1.6rem;
     line-height: 1.5;
     text-rendering: optimizeSpeed;
     color: var(--text-color);
-
 }
-
-button, input , [tabindex] {
+//fonts
+@font-face {
+    font-family: "IBM Plex Sans";
+    src: url("/assets/fonts/TikTokFont-Bold.woff2");
+    font-weight: 700;
+}
+@font-face {
+    font-family: "IBM Plex Sans";
+    src: url("/assets/fonts/TikTokFont-Regular.woff2");
+    font-weight: 400;
+}
+button,
+input,
+[tabindex] {
     outline: none;
     border: none;
 }

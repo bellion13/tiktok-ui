@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
     faCircleQuestion,
     faCircleXmark,
-    faCloudUpload,
     faCoins,
     faEarthAsia,
     faEllipsisVertical,
@@ -19,14 +18,15 @@ import {
 import styles from './Header.module.scss';
 import Tippy from '@tippyjs/react';
 import HeadlessTippy from '@tippyjs/react/headless';
-import 'tippy.js/dist/tippy.css'
-
+import 'tippy.js/dist/tippy.css';
 
 import imgs from '~/assets/imgs';
 import Button from '~/component/Button';
 import { Wrapper as PopperWrapper } from '~/component/Popper';
 import AccountItem from '~/component/AccountItem';
 import Menu from '~/component/Popper/Menu';
+import { UploadIcon } from '~/component/Icons';
+import Image from '~/component/Image';
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -88,9 +88,9 @@ function Header() {
             icon: <FontAwesomeIcon icon={faSignOut} />,
             title: 'Log out',
             to: '/logout',
-            separate : true,
+            separate: true,
         },
-    ]
+    ];
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
@@ -126,12 +126,11 @@ function Header() {
                 <div className={cx('actions')}>
                     {currentUser ? (
                         <>
-                            <Tippy content='Upload Video' placement='bottom'>
+                            <Tippy delay={[0, 200]} content="Upload Video" placement="bottom">
                                 <button className={cx('action-btn')}>
-                                    <FontAwesomeIcon icon={faCloudUpload} />
+                                    <UploadIcon />
                                 </button>
                             </Tippy>
-                           
                         </>
                     ) : (
                         <>
@@ -144,9 +143,14 @@ function Header() {
                             </Button>
                         </>
                     )}
-                    <Menu items={ currentUser ?  userMenu : MENU_ITEMS}>
+                    <Menu items={currentUser ? userMenu : MENU_ITEMS}>
                         {currentUser ? (
-                            <img src='https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tos-alisg-avt-0068/b810d74b8d94d17de51ede393858783d.jpeg?lk3s=a5d48078&nonce=50232&refresh_token=8692d44cf3fce3fb5e0ce933f8b1b0af&x-expires=1726966800&x-signature=AV6JSCyCYmkLvKkNiCakbOzaJps%3D&shp=a5d48078&shcp=81f88b70' className={cx('user-avatar')}  alt="Nguyen Trong Tai" />
+                            <Image
+                                src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tos-alisg-avt-0068/b810d74b8d94d17de51ede393858783d.jpeg?lk3s=a5d48078&nonce=50232&refresh_token=8692d44cf3fce3fb5e0ce933f8b1b0af&x-expires=1726966800&x-signature=AV6JSCyCYmkLvKkNiCakbOzaJps%3D&shp=a5d48078&shcp=81f88b70"
+                                className={cx('user-avatar')}
+                                alt="Nguyen Trong Tai"
+                                
+                            />
                         ) : (
                             <button className={cx('more-btn')}>
                                 <FontAwesomeIcon icon={faEllipsisVertical} />
