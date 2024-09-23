@@ -11,16 +11,19 @@ import {
     faSignOut,
     faUser,
 } from '@fortawesome/free-solid-svg-icons';
-import styles from './Header.module.scss';
 import Tippy from '@tippyjs/react';
 import 'tippy.js/dist/tippy.css';
+import { Link } from 'react-router-dom';
 
+import styles from './Header.module.scss';
 import imgs from '~/assets/imgs';
 import Button from '~/component/Button';
 import Menu from '~/component/Popper/Menu';
 import { UploadIcon } from '~/component/Icons';
 import Image from '~/component/Image';
 import Search from '../Search';
+import routesConfig from '~/config/routes'
+
 
 const cx = classNames.bind(styles);
 const MENU_ITEMS = [
@@ -38,6 +41,7 @@ const MENU_ITEMS = [
                     code: 'vi',
                     title: 'Tiếng Việt',
                 },
+                
             ],
         },
     },
@@ -84,7 +88,7 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <img src={imgs.logo} alt="tiktok" />
+                    <Link to={routesConfig.home} className={cx('logo-link')}><img src={imgs.logo} alt="tiktok" /></Link>
                 </div>
                 {/* search */}
                 <Search />
