@@ -22,7 +22,7 @@ import Menu from '~/component/Popper/Menu';
 import { UploadIcon } from '~/component/Icons';
 import Image from '~/component/Image';
 import Search from '../Search';
-import routesConfig from '~/config/routes'
+import config from '~/config'
 
 
 const cx = classNames.bind(styles);
@@ -88,8 +88,9 @@ function Header() {
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
                 <div className={cx('logo')}>
-                    <Link to={routesConfig.home} className={cx('logo-link')}><img src={imgs.logo} alt="tiktok" /></Link>
+                    <Link to={config.routes.home} className={cx('logo-link')}><img src={imgs.logo} alt="tiktok" /></Link>
                 </div>
+                
                 {/* search */}
                 <Search />
                 {/* actions */}
@@ -117,8 +118,8 @@ function Header() {
                     <Menu items={currentUser ? userMenu : MENU_ITEMS}>
                         {currentUser ? (
                             <Image
-                                src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tos-alisg-avt-0068/b810d74b8d94d17de51ede393858783d.jpeg?lk3s=a5d48078&nonce=50232&refresh_token=8692d44cf3fce3fb5e0ce933f8b1b0af&x-expires=1726966800&x-signature=AV6JSCyCYmkLvKkNiCakbOzaJps%3D&shp=a5d48078&shcp=81f88b70"
                                 className={cx('user-avatar')}
+                                src="https://p16-sign-sg.tiktokcdn.com/aweme/720x720/tos-alisg-avt-0068/b810d74b8d94d17de51ede393858783d.jpeg?lk3s=a5d48078&nonce=35444&refresh_token=8d860b30760f52d9d9a0f0309e7967f1&x-expires=1727236800&x-signature=djJEg2%2B7%2F59EF6%2FC8QG42CTSERI%3D&shp=a5d48078&shcp=81f88b70"
                                 alt="Nguyen Trong Tai"
                             />
                         ) : (
