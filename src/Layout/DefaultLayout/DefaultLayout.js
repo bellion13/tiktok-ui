@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind';
 import Header from '~/Layout/component/Header';
 import styles from './DefaultLayout.module.scss';
-import Sidebar from './Sidebar';
+import Sidebar from '../component/Sidebar';
 import PropTypes from 'prop-types'
 const cx = classNames.bind(styles);
 function DefaultLayout({ children }) {
